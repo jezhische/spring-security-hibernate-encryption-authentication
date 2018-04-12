@@ -2,12 +2,12 @@ package com.jezh.security_hibernate.service;
 
 import java.util.List;
 
+import com.jezh.security_hibernate.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.luv2code.springdemo.dao.CustomerDAO;
-import com.luv2code.springdemo.entity.Customer;
+import com.jezh.security_hibernate.dao.CustomerDAO;
 
 @Service
 public class CustomerServiceImpl implements CustomerService {
@@ -24,23 +24,23 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	@Transactional
-	public void saveCustomer(Customer theCustomer) {
+	public void saveCustomer(Customer customer) {
 
-		customerDAO.saveCustomer(theCustomer);
+		customerDAO.saveCustomer(customer);
 	}
 
 	@Override
 	@Transactional
-	public Customer getCustomer(int theId) {
+	public Customer getCustomer(int id) {
 		
-		return customerDAO.getCustomer(theId);
+		return customerDAO.getCustomer(id);
 	}
 
 	@Override
 	@Transactional
-	public void deleteCustomer(int theId) {
+	public void deleteCustomer(int id) {
 		
-		customerDAO.deleteCustomer(theId);
+		customerDAO.deleteCustomer(id);
 	}
 }
 

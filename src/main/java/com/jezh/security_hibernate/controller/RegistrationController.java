@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.luv2code.springdemo.user.CrmUser;
+import com.jezh.security_hibernate.user.CrmUser;
 
 @Controller
 @RequestMapping("/register")

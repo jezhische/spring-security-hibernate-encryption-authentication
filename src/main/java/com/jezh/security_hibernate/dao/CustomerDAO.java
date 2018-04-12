@@ -2,16 +2,16 @@ package com.jezh.security_hibernate.dao;
 
 import java.util.List;
 
-import com.luv2code.springdemo.entity.Customer;
+import com.jezh.security_hibernate.entity.Customer;
 
 public interface CustomerDAO {
 
 	public List<Customer> getCustomers();
 
-	public void saveCustomer(Customer theCustomer);
+	public void saveCustomer(Customer customer);
 
-	public Customer getCustomer(int theId);
+	public Customer getCustomer(int id);
 
-	public void deleteCustomer(int theId);
+	public void deleteCustomer(int id);
 	
 }

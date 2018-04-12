@@ -23,6 +23,8 @@
         <org.postgresql.version>42.1.1</org.postgresql.version>
         <h2.version>1.4.196</h2.version>
         <c3p0.version>0.9.5.2</c3p0.version>
+        <dbcp.version>1.4</dbcp.version>
+        <proxool.version>0.9.1</proxool.version>
         <!--<javax.validation.version>2.0.0.Final</javax.validation.version>-->
         <!--<hibernate.validator.version>5.4.2.Final</hibernate.validator.version>-->
         <!--<hibernate.validator.version>6.0.7.Final</hibernate.validator.version>-->
@@ -98,17 +100,20 @@
             <version>${javax.servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
+
         <!--эта хрень все повреждает!-->
         <!--<dependency>-->
         <!--<groupId>javax.servlet.jsp</groupId>-->
         <!--<artifactId>javax.servlet.jsp-api</artifactId>-->
         <!--<version>${javax.servlet.jsp-api.version}</version>-->
         <!--</dependency>-->
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>${javax.servlet.jstl.version}</version>
         </dependency>
+
         <!--<dependency>-->
         <!--<groupId>javax</groupId>-->
         <!--<artifactId>javaee-web-api</artifactId>-->
@@ -143,12 +148,26 @@
             <scope>test</scope>
         </dependency>
         <!--TO CREATE CONNECTION POOL:-->
-        <!-- https://mvnrepository.com/artifact/com.mchange/c3p0 -->
+         <!--https://mvnrepository.com/artifact/com.mchange/c3p0-->
         <dependency>
             <groupId>com.mchange</groupId>
             <artifactId>c3p0</artifactId>
             <version>${c3p0.version}</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+        <!--<dependency>-->
+            <!--<groupId>commons-dbcp</groupId>-->
+            <!--<artifactId>commons-dbcp</artifactId>-->
+            <!--<version>${dbcp.version}</version>-->
+        <!--</dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/com.cloudhopper.proxool/proxool -->
+        <!--<dependency>-->
+            <!--<groupId>com.cloudhopper.proxool</groupId>-->
+            <!--<artifactId>proxool</artifactId>-->
+            <!--<version>${proxool.version}</version>-->
+        <!--</dependency>-->
         <!--___________________________________________________________ util: validation, jetbrains-->
         <dependency>
             <groupId>org.hibernate</groupId>
@@ -308,20 +327,20 @@
         <!--api расположен только в atlassian репозитории, в мавен-центральном его нет. Чтобы разрешить зависимость,
         нужно добавить ссылку на репозиторий (см. ниже)-->
         <!-- https://mvnrepository.com/artifact/com.atlassian.mail/atlassian-mail -->
-        <dependency>
-            <groupId>com.atlassian.mail</groupId>
-            <artifactId>atlassian-mail</artifactId>
-            <version>4.0.4</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.atlassian.mail</groupId>-->
+            <!--<artifactId>atlassian-mail</artifactId>-->
+            <!--<version>4.0.4</version>-->
+        <!--</dependency>-->
     </dependencies>
     <!--_________________________________________________________________________________ repositories-->
-    <repositories>
-        <repository>
-            <id>atlassian</id>
-            <name>Atlassian repository</name>
-            <url>https://maven.atlassian.com/content/repositories/atlassian-public/</url>
-        </repository>
-    </repositories>
+    <!--<repositories>-->
+        <!--<repository>-->
+            <!--<id>atlassian</id>-->
+            <!--<name>Atlassian repository</name>-->
+            <!--<url>https://maven.atlassian.com/content/repositories/atlassian-public/</url>-->
+        <!--</repository>-->
+    <!--</repositories>-->
     <!--_________________________________________________________________________________ build-->
     <build>
         <finalName>spring-security-demo-02-basic-security</finalName>
@@ -348,7 +367,7 @@
                 <version>${tomcat7.maven.plugin.version}</version>
                 <configuration>
                     <port>8086</port>
-                    <path>/ssd</path>
+                    <path>/sshib</path>
                 </configuration>
             </plugin>
         </plugins>

@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.luv2code.springdemo.entity.Customer;
-import com.luv2code.springdemo.service.CustomerService;
+import com.jezh.security_hibernate.entity.Customer;
+import com.jezh.security_hibernate.service.CustomerService;
 
 @Controller
 @RequestMapping("/customer")
